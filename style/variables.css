@@ -1,0 +1,7 @@
+:root {
+    --secondary-color: #1e7aba;
+    --contrast-color: #fff;
+    --tertiary-color: #687373;
+    --heading-fontFamily: 'Acme', sans-serif;
+    --text-fontFamily: 'Poppins', 'Verdana', sans-serif;
+}

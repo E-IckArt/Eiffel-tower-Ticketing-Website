@@ -1,0 +1,33 @@
+body {
+    width: 100%;
+    max-width: 100vw;
+    background-color: #e0e0e0;
+    font-family: var(--text-fontFamily);
+}
+
+h1,
+h2 {
+    font-family: var(--heading-fontFamily);
+    letter-spacing: 2px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h3,
+h4 {
+    font-family: var(--heading-fontFamily);
+    margin: 10px 0 3px 0;
+}
+
+b {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: square inside;
+    padding-left: 30px;
+}
