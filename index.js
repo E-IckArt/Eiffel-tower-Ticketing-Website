@@ -7,7 +7,9 @@ let displayTotalChildrenTickets = document.getElementById(
 );
 let displayTotalPrice = document.getElementById('displayTotalPrice');
 
-let btn = document.getElementById('button');
+let seeTotalPriceBtn = document.getElementById('seeTotalPriceButton');
+let buyBtn = document.getElementById('buyButton');
+let resetBtn = document.getElementById('resetButton');
 
 function displayWarningMessage() {
     // Récupère la valeur entrée par l'utilisateur
@@ -74,16 +76,32 @@ function textToBold() {
     boldertTextAfterClick.style.fontWeight = 'bold';
 }
 
+function resetAll() {
+    displayTotalAdultsTickets.textContent = '0';
+    displayTotalChildrenTickets.textContent = '0';
+    displayTotalPrice.textContent = ' 0 €';
+}
+
 window.onload = () => {
     getNumberOfAdults.addEventListener('change', displayAdultPrice);
     getNumberOfChildren.addEventListener('change', displayChildrenPrice);
 
-    btn.addEventListener('click', () => {
+    seeTotalPriceBtn.addEventListener('click', () => {
         let adults = getNumberOfAdults.value;
         let children = getNumberOfChildren.value;
         calc(adults, children);
         textToBold();
+    });
+
+    buyBtn.addEventListener('click', () => {
         getNumberOfAdults.removeEventListener('change', displayAdultPrice);
         getNumberOfChildren.removeEventListener('change', displayChildrenPrice);
+        window.location.href = 'paymentPage.html';
+    });
+
+    resetBtn.addEventListener('click', () => {
+        resetAll();
+        getNumberOfAdults.addEventListener('change', displayAdultPrice);
+        getNumberOfChildren.addEventListener('change', displayChildrenPrice);
     });
 };
